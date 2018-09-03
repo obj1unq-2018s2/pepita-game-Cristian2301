@@ -34,12 +34,11 @@ object pepita {
 	
 	method teEncontro(alguien){
 		alguien.entregarComida(self)
-		game.removeVisual(self)
 	}
 	
 	method cambiarAPepitaSi(){
 		if(energia < 10){
-			imagen = 
+			imagen = "pepona.png"
 		}
 		else{
 			if(energia > 100){
