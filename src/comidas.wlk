@@ -5,7 +5,6 @@ object manzana {
 	
 	method teEncontro(alguien){
 		alguien.guardarComida(self)
-		game.removeVisual(self)
 	}
 }
 
@@ -16,6 +15,5 @@ object alpiste {
 	
 	method teEncontro(alguien){
 		alguien.guardarComida(self)
-		game.removeVisual(self)
 	}
 }

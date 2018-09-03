@@ -3,22 +3,19 @@ import ciudades.*
 import pepita.*
 
 object roque {
-	var property comidaQueLLevaRoque = manzana
+	var property comidaQueLLevaRoque = null
+	var property posicion = game.at(4,4)
+	
+	method imagen() = "jugador.png"
 	
 	method guardarComida(comida){
-		if(self.hayComida(comida) and (comidaQueLLevaRoque = null)){
-	    	game.removeVisual(comida)
-		}
-		if(self.hayComida(comida) and (comidaQueLLevaRoque != null)){
-			game.removeVisual(comida)
-			game.addVisual(comidaQueLLevaRoque)
+		game.removeVisual(comida)
+		if(comidaQueLLevaRoque != null){
+			game.addVisualIn(comidaQueLLevaRoque, posicion.up(1))
 		}
 		comidaQueLLevaRoque = comida
 	}
 	
-	method hayComida(comida){
-		return comida == manzana.imagen() or comida == alpiste.imagen()
-	}
 	
 	method entregarComida(ave){
 		if(ave != null) {
