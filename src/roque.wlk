@@ -23,16 +23,5 @@ object roque {
 			game.addVisualIn(comidaQueLLevaRoque, game.at(5,5))
 			comidaQueLLevaRoque = null
 		}
-		
-		
-		
-		
-		
-		//if(ave != null) {
-		//	 ave.energia() = ave.energia() + comidaQueLLevaRoque.energia()
-		//}
-		//game.addVisualIn(comidaQueLLevaRoque, game.at(2,6))
-		//comidaQueLLevaRoque = null
 	}
 }
-

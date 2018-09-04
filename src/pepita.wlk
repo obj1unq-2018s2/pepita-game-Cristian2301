@@ -23,25 +23,23 @@ object pepita {
 	}
 	
 	method volaHacia(unaCiudad) {
-		if (ciudad != unaCiudad) {
+		if(energia < self.energiaParaVolar(posicion.distance(unaCiudad.posicion()))){
+			game.say(self, "Dame de comer primero!")
+		}
+		else if (ciudad != unaCiudad) {
 			self.move(unaCiudad.posicion())
 			ciudad = unaCiudad
 		}
 		else{
-			game.say(self, "Ya estoy en" + ciudad)
+			game.say(self, "Ya estoy en" + ciudad.nombre())
 		}
 	}
 
 	method energiaParaVolar(distancia) = 15 + 5 * distancia
 
-	method move(nuevaPosicion) {
-		if(energia >= self.energiaParaVolar(posicion.distance(nuevaPosicion))){
+	method move(nuevaPosicion){
 		energia -= self.energiaParaVolar(posicion.distance(nuevaPosicion))
 		self.posicion(nuevaPosicion)
-		}
-		else{
-			game.say(self, "Dame de comer primero")
-		}
 	}	
 	
 	method teEncontro(alguien){
