@@ -4,7 +4,19 @@ object pepita {
 	var property energia = 100
 	var property ciudad = buenosAires 
 	var property posicion = game.at(3,3)
-	var property imagen = "pepita.png"
+	
+	
+    method imagen(){
+    	if(energia < 10){
+    		return "pepona.png"
+    	}
+    	else if(energia > 100){
+    		return "pepita-gorda-raw.png"
+    	}
+    	else{
+    		return "pepita.png"
+    	}
+    }
 
 	method come(comida) {
 		energia = energia + comida.energia()
@@ -16,7 +28,7 @@ object pepita {
 			ciudad = unaCiudad
 		}
 		else{
-			game.say(self, "Ya estoy en !")
+			game.say(self, "Ya estoy en" + ciudad)
 		}
 	}
 
@@ -34,17 +46,6 @@ object pepita {
 	
 	method teEncontro(alguien){
 		alguien.entregarComida(self)
-	}
-	
-	method cambiarAPepitaSi(){
-		if(energia < 10){
-			imagen = "pepona.png"
-		}
-		else{
-			if(energia > 100){
-				imagen = "pepita-gorda-raw.png"
-			}
-		}
 	}
 
 }
