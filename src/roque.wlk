@@ -20,7 +20,7 @@ object roque {
 	method entregarComida(ave){
 		if(comidaQueLLevaRoque != null){
 			ave.come(comidaQueLLevaRoque)
-			game.addVisualIn(comidaQueLLevaRoque, game.at(5,5))
+			game.addVisualIn(comidaQueLLevaRoque, game.at(1.randomUpTo(10), 1.randomUpTo(10)))
 			comidaQueLLevaRoque = null
 		}
 	}
